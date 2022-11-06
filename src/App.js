@@ -1,8 +1,11 @@
 import { Headline } from "./components/molecules/Headline";
+import { DefaultLayout } from "./components/templates/DefaultLayout";
 
 function App() {
   return (
-    <Headline></Headline>
+    <DefaultLayout>
+    <Headline/>
+    </DefaultLayout>
   );
 }
 
