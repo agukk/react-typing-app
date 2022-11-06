@@ -1,10 +1,10 @@
-import { Headline } from "./components/molecules/Headline";
 import { DefaultLayout } from "./components/templates/DefaultLayout";
+import { Router } from "./router/Router";
 
 function App() {
   return (
     <DefaultLayout>
-    <Headline/>
+    <Router />
     </DefaultLayout>
   );
 }
