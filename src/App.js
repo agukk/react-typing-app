@@ -1,6 +1,8 @@
+import { Headline } from "./components/molecules/Headline";
+
 function App() {
   return (
-    <p>Hello world!</p>
+    <Headline></Headline>
   );
 }
 
