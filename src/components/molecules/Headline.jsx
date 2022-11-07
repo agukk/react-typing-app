@@ -4,11 +4,11 @@ import { PrimaryText } from "../atoms/text/PrimaryText";
 
 export const Headline = () => {
     return(
-        <div className='h-screen w-screen flex flex-col justify-center items-center'>
+        <>
             <PrimaryText>Learn English while typing!</PrimaryText>
             <Link to='typing'>
                 <PrimaryButton>Get Started!</PrimaryButton>
             </Link>
-        </div>
+        </>
     );
 }
