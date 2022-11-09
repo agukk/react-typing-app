@@ -69,8 +69,12 @@ export const Typing = () => {
         setRetry(Math.random());
     }
 
-    const accuracy = (index / (index + missCount) * 100).toFixed(1)
-
+    let accuracy = 0
+    if (index > 0 && missCount > 0)
+    {
+        accuracy = (index / (index + missCount) * 100).toFixed(1)
+    }
+    
     return(
         <div className='h-screen w-screen flex flex-col justify-center items-center'>
             <div onKeyDown={(event) => checkTypingLetter(event)} tabIndex={0} className='text-5xl font-serif p-24 cursor-pointer'>
