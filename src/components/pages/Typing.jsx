@@ -6,7 +6,7 @@ import { MissLetter } from "../atoms/layout/MissLetter";
 import { NomalLetter } from "../atoms/layout/NomalLetter";
 import { TypeLetter } from "../atoms/layout/TypeLetter";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
-import { Link } from "react-router-dom";
+import { ResultModal } from "../organizms/ResultModal";
 
 export const Typing = () => {
     // words that user types
@@ -98,11 +98,13 @@ export const Typing = () => {
             <div onClick={initilize} className='pt-12'>
                 <PrimaryButton>Retry</PrimaryButton>
             </div>
-            {/* {modalOpen ? (
-                <h1>Fuck you</h1>
-            ) : (
-                <></>
-            )} */}
+            <ResultModal 
+            correctCount={index}
+            missCount={missCount}
+            modalOpen={modalOpen}
+            initilize={initilize}
+            accuracy={accuracy} 
+            />
         </div>
     );
 }
