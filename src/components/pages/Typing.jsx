@@ -6,6 +6,7 @@ import { MissLetter } from "../atoms/layout/MissLetter";
 import { NomalLetter } from "../atoms/layout/NomalLetter";
 import { TypeLetter } from "../atoms/layout/TypeLetter";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
+import { Link } from "react-router-dom";
 
 export const Typing = () => {
     // words that user types
@@ -28,10 +29,11 @@ export const Typing = () => {
     const [missCount, setMissCount] = useState(0);
     const [finish, setFinish] = useState(false);
     const [retry, setRetry] = useState("");
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         let ts = '';
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 1; i++) {
             let word = words[Math.floor(Math.random() * words.length)];
             ts += word + ' '
         }
@@ -52,6 +54,7 @@ export const Typing = () => {
             if (index + 1 >= typingString.length)
             {
                 setFinish(true);
+                setModalOpen(true);
             }
         }
         else
@@ -67,6 +70,7 @@ export const Typing = () => {
         setMissCount(0);
         setFinish(false);
         setRetry(Math.random());
+        setModalOpen(false);
     }
 
     let accuracy = 0
@@ -94,6 +98,11 @@ export const Typing = () => {
             <div onClick={initilize} className='pt-12'>
                 <PrimaryButton>Retry</PrimaryButton>
             </div>
+            {/* {modalOpen ? (
+                <h1>Fuck you</h1>
+            ) : (
+                <></>
+            )} */}
         </div>
     );
 }
