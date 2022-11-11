@@ -8,7 +8,6 @@ export const Error404 = () => {
                     <img src="https://images.unsplash.com/photo-1519242220831-09410926fbff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" loading="lazy" alt="" className="w-full h-screen object-cover object-center" />
                     </div>
                     {/* image - end */}
-
                     {/* content - start */}
                     <div className="flex flex-col justify-center items-center sm:items-start md:py-24 lg:py-32 xl:py-64">
                         <p className="text-indigo-500 text-sm md:text-base font-semibold uppercase mb-4">Error 404</p>
