@@ -1,12 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CorrectLetter } from "../atoms/layout/CorrectLetter";
 import { MissLetter } from "../atoms/layout/MissLetter";
 import { NomalLetter } from "../atoms/layout/NomalLetter";
 import { TypeLetter } from "../atoms/layout/TypeLetter";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ResultModal } from "../organizms/ResultModal";
-import { TypingString } from "../atoms/text/TypingString";
 
 export const Typing = () => {
     const [typingString, setTypingString] = useState("");
@@ -16,14 +15,19 @@ export const Typing = () => {
     const [finish, setFinish] = useState(false);
     const [retry, setRetry] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
+    const renderFlagRef = useRef(false);
 
     useEffect(() => {
-        async function getWord() {
-            const response = await axios.get('https://random-word-api.herokuapp.com/word');
-            let word = response.data[0]
-            setTypingString(word);
+        if (renderFlagRef.current) {
+            async function getWord() {
+                const response = await axios.get('https://random-word-api.herokuapp.com/word');
+                let word = response.data[0]
+                setTypingString(word);
+            }
+            getWord();
+        } else {
+            renderFlagRef.current = true;
         }
-        getWord();
     }, [retry])
 
     const checkTypingLetter = (event) => {
@@ -65,7 +69,7 @@ export const Typing = () => {
 
     return(
         <div className='h-screen w-screen flex flex-col justify-center items-center'>
-            <TypingString>{typingString}</TypingString>
+            <span className='text-white'>{typingString}</span>
             <div onKeyDown={(event) => checkTypingLetter(event)} tabIndex={0} className='text-5xl font-serif p-24 cursor-pointer'>
                 <CorrectLetter typingString={typingString} index={index}/>
                 {isMissType ? (
