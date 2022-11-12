@@ -1,5 +1,5 @@
-import { Footer } from "../atoms/layout/Footer";
-import { Header } from "../atoms/layout/Header";
+import { Footer } from "../organizms/Footer";
+import { Header } from "../organizms/Header";
 
 export const DefaultLayout = ({ children }) => {
     return(
