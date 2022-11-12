@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { CorrectLetter } from "../atoms/layout/CorrectLetter";
 import { MissLetter } from "../atoms/layout/MissLetter";
@@ -6,6 +5,8 @@ import { NomalLetter } from "../atoms/layout/NomalLetter";
 import { TypeLetter } from "../atoms/layout/TypeLetter";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ResultModal } from "../organizms/ResultModal";
+import { randomWordApi } from "../../api/randomWordApi";
+import { LoadingSpin } from "../atoms/layout/LoadingSpin";
 
 export const Typing = () => {
     const [typingString, setTypingString] = useState("");
@@ -15,17 +16,28 @@ export const Typing = () => {
     const [finish, setFinish] = useState(false);
     const [retry, setRetry] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const renderFlagRef = useRef(false);
 
     useEffect(() => {
-        if (renderFlagRef.current) {
-            async function getWord() {
-                const response = await axios.get('https://random-word-api.herokuapp.com/word');
-                let word = response.data[0]
-                setTypingString(word);
+        let letter = ''
+        setIsLoading(false);
+        const getWord = async () => {
+            for (let i = 0; i < 4; i++) {
+                const response = await randomWordApi.get();
+                letter += response.data[0] + ' '
             }
-            getWord();
-        } else {
+            const response = await randomWordApi.get();
+            letter += response.data[0]
+            setTypingString(letter);
+            setIsLoading(true);
+        }
+        if (renderFlagRef.current)
+        {
+            getWord()
+        } 
+        else 
+        {
             renderFlagRef.current = true;
         }
     }, [retry])
@@ -69,16 +81,19 @@ export const Typing = () => {
 
     return(
         <div className='h-screen w-screen flex flex-col justify-center items-center'>
-            <span className='text-white'>{typingString}</span>
-            <div onKeyDown={(event) => checkTypingLetter(event)} tabIndex={0} className='text-5xl font-serif p-24 cursor-pointer'>
-                <CorrectLetter typingString={typingString} index={index}/>
-                {isMissType ? (
-                    <MissLetter typingString={typingString} index={index}/>
-                ) : (
-                    <NomalLetter typingString={typingString} index={index}/>
-                )}
-                <TypeLetter typingString={typingString} index={index}/>
-            </div>
+            {isLoading ? (
+                <div onKeyDown={(event) => checkTypingLetter(event)} tabIndex={0} className='text-5xl font-serif p-24 cursor-pointer'>
+                    <CorrectLetter typingString={typingString} index={index}/>
+                    {isMissType ? (
+                        <MissLetter typingString={typingString} index={index}/>
+                    ) : (
+                        <NomalLetter typingString={typingString} index={index}/>
+                    )}
+                    <TypeLetter typingString={typingString} index={index}/>
+                </div>
+            ) : (
+                <LoadingSpin/>
+            )}
             <div className='font-light text-2xl space-x-12'>
                 <span>CorrectType : { index }</span>
                 <span>MissType : { missCount }</span>
