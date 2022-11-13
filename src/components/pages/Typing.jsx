@@ -3,10 +3,10 @@ import { CorrectLetter } from "../atoms/layout/CorrectLetter";
 import { MissLetter } from "../atoms/layout/MissLetter";
 import { NomalLetter } from "../atoms/layout/NomalLetter";
 import { TypeLetter } from "../atoms/layout/TypeLetter";
-import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ResultModal } from "../organizms/ResultModal";
 import { randomWordApi } from "../../api/randomWordApi";
 import { LoadingSpin } from "../atoms/layout/LoadingSpin";
+import { SecondaryButton } from "../atoms/button/SecondaryButton";
 
 export const Typing = () => {
     const [typingString, setTypingString] = useState("");
@@ -100,7 +100,7 @@ export const Typing = () => {
                 <span>Accuracy : { accuracy } %</span>
             </div>
             <div onClick={initilize} className='pt-12'>
-                <PrimaryButton>Retry</PrimaryButton>
+                <SecondaryButton>Retry</SecondaryButton>
             </div>
             <ResultModal 
             correctCount={index}
