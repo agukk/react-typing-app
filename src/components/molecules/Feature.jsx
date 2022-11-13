@@ -57,7 +57,7 @@ export const Feature = () => {
             </span>
 
             <h1 className='mt-4 text-xl font-semibold text-gray-800 dark:text-white'>
-              Learn English
+              Experience words
             </h1>
 
             <p className='mt-2 text-gray-500 dark:text-gray-400'>

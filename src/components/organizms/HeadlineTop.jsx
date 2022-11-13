@@ -13,7 +13,7 @@ export const HeadlineTop = () => {
 
           <div className='mt-8 space-y-5'>
             <StrongPoint>Easy to use</StrongPoint>
-            <StrongPoint>Learn English</StrongPoint>
+            <StrongPoint>Experience words</StrongPoint>
             <StrongPoint>Responsive Web design</StrongPoint>
           </div>
         </div>
