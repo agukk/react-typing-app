@@ -19,7 +19,7 @@ export const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className="text-gray-400 text-sm text-center py-6">© 2022 - Native Typing</div>
+                <div className="text-gray-400 text-sm text-center py-6">© 2022 - Typlus</div>
             </footer>
         </div>
     );
