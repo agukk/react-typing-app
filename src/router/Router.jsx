@@ -5,14 +5,14 @@ import { Top } from "../components/pages/Top";
 import { Typing } from "../components/pages/Typing";
 
 export const Router = () => {
-    return(
+    return (
         <BrowserRouter>
             <Routes>
-                <Route index element={<Top/>}/>
-                <Route path={'guide'} element={<Guide/>}/>
-                <Route path={'typing'} element={<Typing/>}/>
-                <Route path={'*'} element={<Error404/>}/>
+                <Route index element={<Top />} />
+                <Route path={"guide"} element={<Guide />} />
+                <Route path={"typing"} element={<Typing />} />
+                <Route path={"*"} element={<Error404 />} />
             </Routes>
         </BrowserRouter>
     );
-}
+};

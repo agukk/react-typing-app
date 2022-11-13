@@ -2,11 +2,11 @@ import { Footer } from "../organizms/Footer";
 import { Header } from "../organizms/Header";
 
 export const DefaultLayout = ({ children }) => {
-    return(
+    return (
         <>
-            <Header/>
-            { children }
-            <Footer/>
+            <Header />
+            {children}
+            <Footer />
         </>
     );
-}
+};

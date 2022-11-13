@@ -3,11 +3,11 @@ import { HeadlineButtom } from "../molecules/HeadlineButtom";
 import { HeadlineTop } from "../organizms/HeadlineTop";
 
 export const Top = () => {
-    return(
+    return (
         <>
-            <HeadlineTop/>
-            <Feature/>
-            <HeadlineButtom/>
+            <HeadlineTop />
+            <Feature />
+            <HeadlineButtom />
         </>
     );
-}
+};
