@@ -8,7 +8,17 @@ import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { useTyping } from "../../hooks/useTyping";
 
 export const Typing = () => {
-  const {isLoading, checkTypingLetter, typingString, index, isMissType, missCount, accuracy, initilize, modalOpen} = useTyping();  
+  const {
+    isLoading,
+    checkTypingLetter,
+    typingString,
+    index,
+    isMissType,
+    missCount,
+    accuracy,
+    initilize,
+    modalOpen,
+  } = useTyping();
 
   return (
     <div className='h-screen w-screen flex flex-col justify-center items-center'>

@@ -32,22 +32,25 @@ export const useTyping = () => {
     }
   }, [retry]);
 
-  const checkTypingLetter = useCallback((event) => {
-    if (finish) {
-      return;
-    }
-    if (event.key === typingString[index]) {
-      setIsMissType(false);
-      setIndex(index + 1);
-      if (index + 1 >= typingString.length) {
-        setFinish(true);
-        setModalOpen(true);
+  const checkTypingLetter = useCallback(
+    (event) => {
+      if (finish) {
+        return;
       }
-    } else {
-      setIsMissType(true);
-      setMissCount(missCount + 1);
-    }
-  }, [finish, index, typingString, missCount]);
+      if (event.key === typingString[index]) {
+        setIsMissType(false);
+        setIndex(index + 1);
+        if (index + 1 >= typingString.length) {
+          setFinish(true);
+          setModalOpen(true);
+        }
+      } else {
+        setIsMissType(true);
+        setMissCount(missCount + 1);
+      }
+    },
+    [finish, index, typingString, missCount],
+  );
 
   const initilize = useCallback(() => {
     setIndex(0);
@@ -63,5 +66,15 @@ export const useTyping = () => {
     accuracy = ((index / (index + missCount)) * 100).toFixed(1);
   }
 
-  return {isLoading, checkTypingLetter, typingString, index, isMissType, missCount, accuracy, initilize, modalOpen};
+  return {
+    isLoading,
+    checkTypingLetter,
+    typingString,
+    index,
+    isMissType,
+    missCount,
+    accuracy,
+    initilize,
+    modalOpen,
+  };
 };
