@@ -1,10 +1,13 @@
-import { Headline } from "../molecules/Headline";
-
+import { Feature } from "../molecules/Feature";
+import { HeadlineButtom } from "../molecules/HeadlineButtom";
+import { HeadlineTop } from "../organizms/HeadlineTop";
 
 export const Top = () => {
     return(
-        <div className='h-screen w-screen flex flex-col justify-center items-center'>
-            <Headline/>
-        </div>
+        <>
+            <HeadlineTop/>
+            <Feature/>
+            <HeadlineButtom/>
+        </>
     );
 }

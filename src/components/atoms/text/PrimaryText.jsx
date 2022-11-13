@@ -1,7 +1,7 @@
 export const PrimaryText = ({ children }) => {
     return(
-        <h3 className='text-3xl font-sans mb-12'>
+        <h1 className="text-2xl font-semibold text-gray-700 dark:text-white">
             { children }
-        </h3>
+        </h1>
     );
 }

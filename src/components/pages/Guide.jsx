@@ -1,6 +1,6 @@
 import { GuideLogo } from "../atoms/text/GuideLogo";
-import { GuideText } from "../atoms/text/GuideText";
-import { GuideTitle } from "../atoms/text/GuideTitle";
+import { SecondaryText } from "../atoms/text/SecondaryText";
+import { PrimaryText } from "../atoms/text/PrimaryText";
 
 export const Guide = () => {
     return(
@@ -11,42 +11,42 @@ export const Guide = () => {
                     <div>
                         <GuideLogo/>
                         <div>
-                            <GuideTitle>How to get started?</GuideTitle>
-                            <GuideText>
+                            <PrimaryText>How to get started?</PrimaryText>
+                            <SecondaryText>
                                 First, press Get started button.<br/>
                                 Then click anywhere on the English word.<br/>
                                 After that, you can start typing.
-                            </GuideText>
+                            </SecondaryText>
                         </div>
                     </div>
                     <div>
                         <GuideLogo/>
                         <div>
-                            <GuideTitle>What if I want to start over?</GuideTitle>
-                            <GuideText>
+                            <PrimaryText>What if I want to start over?</PrimaryText>
+                            <SecondaryText>
                                 Press Retry button.<br/> 
                                 Then You can start all over again!
-                            </GuideText>
+                            </SecondaryText>
                         </div>
                     </div>
                     <div>
                         <GuideLogo/>
                         <div>
-                            <GuideTitle>What happens if I type to the last letter?</GuideTitle>
-                            <GuideText>
+                            <PrimaryText>What happens if I type to the last letter?</PrimaryText>
+                            <SecondaryText>
                                 A modal is displayed.<br/>
                                 There you can see score, correct type, miss type and accuracy.
-                            </GuideText>
+                            </SecondaryText>
                         </div>
                     </div>
                     <div>
                         <GuideLogo/>
                         <div>
-                            <GuideTitle>What if I finish typing and want to start over again?</GuideTitle>
-                            <GuideText>
+                            <PrimaryText>What if I finish typing and want to start over again?</PrimaryText>
+                            <SecondaryText>
                                 There is Again button on the modal.<br/>
                                 Then you can start over again!
-                            </GuideText>
+                            </SecondaryText>
                         </div>
                     </div>
                 </div>
