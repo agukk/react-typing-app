@@ -16,7 +16,7 @@ export const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className="text-gray-400 text-sm text-center py-6">© 2022 - Typlus</div>
+                <div className="text-gray-400 text-sm text-center py-6">© 2022 - Typract</div>
             </footer>
         </div>
     );
