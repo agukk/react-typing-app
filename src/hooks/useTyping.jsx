@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { randomWordApi } from "../api/randomWordApi";
+import { useCallback, useEffect, useState } from "react";
+import { words } from "../words/EnglishWords";
 
 export const useTyping = () => {
   const [typingString, setTypingString] = useState("");
@@ -9,27 +9,16 @@ export const useTyping = () => {
   const [finish, setFinish] = useState(false);
   const [retry, setRetry] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const renderFlagRef = useRef(false);
 
   useEffect(() => {
-    let letter = "";
-    setIsLoading(false);
-    const getWord = async () => {
-      for (let i = 0; i < 4; i++) {
-        const response = await randomWordApi.get();
-        letter += response.data[0] + " ";
-      }
-      const response = await randomWordApi.get();
-      letter += response.data[0];
-      setTypingString(letter);
-      setIsLoading(true);
-    };
-    if (renderFlagRef.current) {
-      getWord();
-    } else {
-      renderFlagRef.current = true;
+    let ts = "";
+    for (let i = 0; i < 10; i++) {
+      let word = words[Math.floor(Math.random() * words.length)];
+      ts += word + " ";
     }
+    let newTypingString = ts.slice(0, -1);
+    setTypingString(newTypingString);
+    // eslint-disable-next-line
   }, [retry]);
 
   const checkTypingLetter = useCallback(
@@ -67,7 +56,6 @@ export const useTyping = () => {
   }
 
   return {
-    isLoading,
     checkTypingLetter,
     typingString,
     index,
