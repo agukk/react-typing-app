@@ -61,13 +61,14 @@ export const Feature = () => {
             </h1>
 
             <p className='mt-2 text-gray-500 dark:text-gray-400'>
-              You can experience various English words that are excerpted from
+              You can experience various English words.<br/>
+              English words are excerpted from 
               <a
-                href='http://random-word-api.herokuapp.com/home'
+                href='https://distinction.atsueigo.com/'
                 className='text-blue-500 hover:text-blue-400'
               >
                 {" "}
-                Random Word API
+                Distinction
               </a>
               .
             </p>

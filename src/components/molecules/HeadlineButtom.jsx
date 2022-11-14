@@ -12,7 +12,7 @@ export const HeadlineButtom = () => {
           </span>
         </h2>
         <p className='text-xl mt-4 max-w-md mx-auto text-gray-400'>
-          You can practice typing by displaying five random words on this site.
+          You can practice typing by displaying ten random words on this site.
         </p>
         <div className='lg:mt-0 lg:flex-shrink-0'>
           <div className='mt-8 inline-flex rounded-md shadow'>
