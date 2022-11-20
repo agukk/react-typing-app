@@ -5,7 +5,7 @@
 ![my app image](https://user-images.githubusercontent.com/104254253/202879911-169433e1-f977-47a8-b284-0d24ac02ac49.png)
 
 **タイピングページ**
-![typing image]()
+![6b288a96-20e5-46ae-9735-ac1c40153051](https://user-images.githubusercontent.com/104254253/202886704-26e927cd-00d0-4f23-ad3c-812190de548c.gif)
 
 **モーダル**
 ![modal image]()
